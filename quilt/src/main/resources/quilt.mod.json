@@ -5,15 +5,17 @@
     "examplemod-common.mixins.json"
   ],
   "quilt_loader": {
+    "metadata": {
+      "name": "Example Mod",
+      "description": "This is an example description! Tell everyone what your mod is about!",
+      "authors": ["Me!"],
+      "contact": {
+        "sources": "https://github.com/architectury/architectury-templates"
+      }
+    },
     "group": "${group}",
     "id": "examplemod",
     "version": "${version}",
-    "name": "Example Mod",
-    "description": "This is an example description! Tell everyone what your mod is about!",
-    "authors": ["Me!"],
-    "contact": {
-      "sources": "https://github.com/architectury/architectury-templates"
-    },
     "license": "Insert License Here",
     "icon": "assets/examplemod/icon.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
@@ -34,11 +36,11 @@
       },
       {
         "id": "minecraft",
-        "version": ">=1.19.2"
+        "version": ">=${minecraft_version}"
       },
       {
         "id": "architectury",
-        "version": ">=6.2.43"
+        "version": ">=${architectury_version}"
       }
     ]
   }
