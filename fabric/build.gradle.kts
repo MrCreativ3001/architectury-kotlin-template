@@ -45,6 +45,9 @@ dependencies {
     shadowCommon(project(":fabric-like", "transformProductionFabric")) {
         isTransitive = false
     }
+
+    // Fabric Kotlin
+    modImplementation("net.fabricmc:fabric-language-kotlin:${rootProject.property("fabric_kotlin_version")}")
 }
 
 tasks.processResources {
@@ -57,7 +60,8 @@ tasks.processResources {
             Pair("version", project.version),
             // TODO: Use those in the quilt mod json
             Pair("minecraft_version", rootProject.property("minecraft_version")),
-            Pair("architectury_version", rootProject.property("architectury_version"))
+            Pair("architectury_version", rootProject.property("architectury_version")),
+            Pair("fabric_kotlin_version", rootProject.property("fabric_kotlin_version"))
         ))
     }
 }

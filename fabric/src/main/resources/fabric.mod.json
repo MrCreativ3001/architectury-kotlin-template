@@ -16,7 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      {
+        "adapter": "kotlin",
+        "value": "net.examplemod.fabric.ExampleModFabric"
+      }
     ]
   },
   "mixins": [
@@ -26,6 +29,7 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=${minecraft_version}",
-    "architectury": ">=${architectury_version}"
+    "architectury": ">=${architectury_version}",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}"
   }
 }
