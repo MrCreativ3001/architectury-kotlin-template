@@ -29,6 +29,14 @@ configurations {
     developmentForge.extendsFrom(common)
 }
 
+repositories {
+    // KFF
+    maven {
+        name = "Kotlin for Forge"
+        setUrl("https://thedarkcolour.github.io/KotlinForForge/")
+    }
+}
+
 dependencies {
     forge("net.minecraftforge:forge:${rootProject.property("forge_version")}")
     // Remove the next line if you don't want to depend on the API
@@ -36,6 +44,9 @@ dependencies {
 
     common(project(":common", "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", "transformProductionForge")) { isTransitive = false }
+
+    // Kotlin For Forge
+    implementation("thedarkcolour:kotlinforforge:${rootProject.property("kotlin_for_forge_version")}")
 }
 
 tasks.processResources {
@@ -48,7 +59,8 @@ tasks.processResources {
             Pair("version", project.version),
             // TODO: Use those in the quilt mod json
             Pair("minecraft_version", rootProject.property("minecraft_version")),
-            Pair("architectury_version", rootProject.property("architectury_version"))
+            Pair("architectury_version", rootProject.property("architectury_version")),
+            Pair("kotlin_for_forge_version", rootProject.property("kotlin_for_forge_version"))
         ))
     }
 }

@@ -25,6 +25,6 @@ public class ExampleMod {
     public static void init() {
         ITEMS.register();
         
-        System.out.println(ExampleExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString());
+        System.out.println("CONFIG DIR: "+ExampleExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString());
     }
 }

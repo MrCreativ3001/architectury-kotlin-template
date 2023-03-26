@@ -1,4 +1,5 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
@@ -30,6 +31,7 @@ subprojects {
 
 allprojects {
     apply(plugin = "java")
+    apply(plugin = "kotlin")
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
 
@@ -46,9 +48,16 @@ allprojects {
         // for more information about repositories.
     }
 
+    dependencies {
+        compileOnly("org.jetbrains.kotlin:kotlin-stdlib")
+    }
+
     tasks.withType<JavaCompile> {
         options.encoding = "UTF-8"
         options.release.set(17)
+    }
+    kotlin.target.compilations.all {
+        kotlinOptions.jvmTarget = "17"
     }
 
     java {
