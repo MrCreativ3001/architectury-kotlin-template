@@ -57,7 +57,7 @@ tasks.processResources {
         expand(mutableMapOf(
             Pair("group", rootProject.property("maven_group")),
             Pair("version", project.version),
-            // TODO: Use those in the quilt mod json
+
             Pair("minecraft_version", rootProject.property("minecraft_version")),
             Pair("architectury_version", rootProject.property("architectury_version")),
             Pair("kotlin_for_forge_version", rootProject.property("kotlin_for_forge_version"))
