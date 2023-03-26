@@ -49,6 +49,8 @@ dependencies {
     shadowCommon(project(":fabric-like", "transformProductionQuilt")) {
         isTransitive = false
     }
+
+    modApi("org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries:${rootProject.property("quilt_kotlin_libraries_version")}")
 }
 
 tasks.processResources {
