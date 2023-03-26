@@ -14,7 +14,7 @@
       }
     },
     "group": "${group}",
-    "id": "examplemod",
+    "id": "${mod_id}",
     "version": "${version}",
     "license": "Insert License Here",
     "icon": "assets/examplemod/icon.png",

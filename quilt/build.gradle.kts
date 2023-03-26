@@ -62,6 +62,7 @@ tasks.processResources {
             Pair("group", rootProject.property("maven_group")),
             Pair("version", project.version),
 
+            Pair("mod_id", rootProject.property("mod_id")),
             Pair("minecraft_version", rootProject.property("minecraft_version")),
             Pair("architectury_version", rootProject.property("architectury_version"))
         ))
