@@ -5,8 +5,6 @@ It'll automatically depend on
 [Fabric Kotlin](https://github.com/FabricMC/fabric-language-kotlin) for Fabric
 or [Quilt Kotlin](https://github.com/QuiltMC/quilt-kotlin-libraries) for Quilt.
 
-Quilt is currently not working.
-
 ## License
 This template is licensed under the [Creative Common Zero v1.0 license](LICENSE).
 
