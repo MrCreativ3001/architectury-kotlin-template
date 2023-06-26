@@ -1,9 +1,8 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.22"
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.0-SNAPSHOT" apply false
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
