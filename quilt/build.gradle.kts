@@ -73,18 +73,18 @@ tasks.processResources {
 tasks.shadowJar {
     exclude("architectury.common.json")
     configurations = listOf(shadowCommon)
-    classifier = "dev-shadow"
+    archiveClassifier.set("dev-shadow")
 }
 
 tasks.remapJar {
     injectAccessWidener.set(true)
-    input.set(tasks.shadowJar.get().archiveFile)
+    inputFile.set(tasks.shadowJar.get().archiveFile)
     dependsOn(tasks.shadowJar)
-    classifier = null
+    archiveClassifier.set(null)
 }
 
 tasks.jar {
-    classifier = "dev"
+    archiveClassifier.set("dev")
 }
 
 tasks.sourcesJar {
