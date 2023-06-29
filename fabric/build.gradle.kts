@@ -55,14 +55,14 @@ tasks.processResources {
     inputs.property("version", project.version)
 
     filesMatching("fabric.mod.json") {
-        expand(mutableMapOf(
-            Pair("group", rootProject.property("maven_group")),
-            Pair("version", project.version),
+        expand(mapOf(
+            "group" to rootProject.property("maven_group"),
+            "version" to project.version,
 
-            Pair("mod_id", rootProject.property("mod_id")),
-            Pair("minecraft_version", rootProject.property("minecraft_version")),
-            Pair("architectury_version", rootProject.property("architectury_version")),
-            Pair("fabric_kotlin_version", rootProject.property("fabric_kotlin_version"))
+            "mod_id" to rootProject.property("mod_id"),
+            "minecraft_version" to rootProject.property("minecraft_version"),
+            "architectury_version" to rootProject.property("architectury_version"),
+            "fabric_kotlin_version" to rootProject.property("fabric_kotlin_version")
         ))
     }
 }
