@@ -77,7 +77,7 @@ tasks.remapJar {
     injectAccessWidener.set(true)
     inputFile.set(tasks.shadowJar.get().archiveFile)
     dependsOn(tasks.shadowJar)
-    archiveClassifier.set(null)
+    archiveClassifier.set(null as String?)
 }
 
 tasks.jar {
