@@ -24,8 +24,8 @@ val shadowCommon: Configuration by configurations.creating
 val developmentForge: Configuration by configurations.getting
 
 configurations {
-    compileClasspath.extendsFrom(common)
-    runtimeClasspath.extendsFrom(common)
+    compileOnly.configure { extendsFrom(common) }
+    runtimeOnly.configure { extendsFrom(common) }
     developmentForge.extendsFrom(common)
 }
 

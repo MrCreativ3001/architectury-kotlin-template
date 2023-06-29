@@ -22,8 +22,8 @@ val shadowCommon: Configuration by configurations.creating
 val developmentQuilt: Configuration by configurations.getting
 
 configurations {
-    compileClasspath.extendsFrom(common)
-    runtimeClasspath.extendsFrom(common)
+    compileOnly.configure { extendsFrom(common) }
+    runtimeOnly.configure { extendsFrom(common) }
     developmentQuilt.extendsFrom(common)
 }
 
