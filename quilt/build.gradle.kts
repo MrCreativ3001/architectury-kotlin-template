@@ -22,8 +22,8 @@ val shadowCommon: Configuration by configurations.creating
 val developmentQuilt: Configuration by configurations.getting
 
 configurations {
-    compileClasspath.extendsFrom(common)
-    runtimeClasspath.extendsFrom(common)
+    compileOnly.configure { extendsFrom(common) }
+    runtimeOnly.configure { extendsFrom(common) }
     developmentQuilt.extendsFrom(common)
 }
 
@@ -59,13 +59,13 @@ tasks.processResources {
     inputs.property("version", project.version)
 
     filesMatching("quilt.mod.json") {
-        expand(mutableMapOf(
-            Pair("group", rootProject.property("maven_group")),
-            Pair("version", project.version),
+        expand(mapOf(
+            "group" to rootProject.property("maven_group"),
+            "version" to project.version,
 
-            Pair("mod_id", rootProject.property("mod_id")),
-            Pair("minecraft_version", rootProject.property("minecraft_version")),
-            Pair("architectury_version", rootProject.property("architectury_version"))
+            "mod_id" to rootProject.property("mod_id"),
+            "minecraft_version" to rootProject.property("minecraft_version"),
+            "architectury_version" to rootProject.property("architectury_version")
         ))
     }
 }
@@ -73,18 +73,18 @@ tasks.processResources {
 tasks.shadowJar {
     exclude("architectury.common.json")
     configurations = listOf(shadowCommon)
-    classifier = "dev-shadow"
+    archiveClassifier.set("dev-shadow")
 }
 
 tasks.remapJar {
     injectAccessWidener.set(true)
-    input.set(tasks.shadowJar.get().archiveFile)
+    inputFile.set(tasks.shadowJar.get().archiveFile)
     dependsOn(tasks.shadowJar)
-    classifier = null
+    archiveClassifier.set(null as String?)
 }
 
 tasks.jar {
-    classifier = "dev"
+    archiveClassifier.set("dev")
 }
 
 tasks.sourcesJar {
